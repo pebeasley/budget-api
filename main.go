@@ -44,7 +44,7 @@ func main() {
 
 	routes.SetupRoutesV1(app.Group("/api"))
 
-	listenError := app.Listen(":8080")
+	listenError := app.Listen(":9080")
 
 	if listenError != nil {
 		fmt.Println(listenError)

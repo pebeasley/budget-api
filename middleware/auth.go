@@ -22,12 +22,12 @@ func jwtError(c *fiber.Ctx, err error) error {
 			"data":    nil,
 		})
 
-	} else {
-		c.Status(fiber.StatusUnauthorized)
-		return c.JSON(fiber.Map{
-			"status":  "error",
-			"message": "Invalid or expired JWT",
-			"data":    nil,
-		})
 	}
+
+	c.Status(fiber.StatusUnauthorized)
+	return c.JSON(fiber.Map{
+		"status":  "error",
+		"message": "Invalid or expired JWT",
+		"data":    nil,
+	})
 }
